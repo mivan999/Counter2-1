@@ -41,6 +41,25 @@ function App() {
         setEditStatus(true)
         localStorage.setItem('valStart', JSON.stringify(start - 1))
     }
+    // const setValue = (el:string,log:string) => {
+    //     if(el==="Max"){
+    //         if(log==="Up"){
+    //
+    //         }
+    //         else if(log==="Down"){
+    //
+    //         }
+    //     }
+    //     else if(el==="Start"){
+    //         if(log==="Up"){
+    //
+    //         }
+    //         else if(log==="Down"){
+    //
+    //         }
+    //     }
+    // }
+
     const incHandler = () => {
         setCount(count + 1)
     }

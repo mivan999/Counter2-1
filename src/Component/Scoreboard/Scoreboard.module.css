@@ -1,5 +1,5 @@
 .def{
-width: 50%;
+width: 27%;
     margin: 10px auto 30px auto;
     box-shadow: 0 5px 10px 2px rgba(0,0,0,0.25);
     padding: 20px;
@@ -7,7 +7,7 @@ width: 50%;
 }
 .lim{
     background-color: #e8efe8;
-    width: 50%;
+    width: 27%;
     margin: 10px auto 30px auto;
     box-shadow: 0 5px 10px 2px rgba(0,0,0,0.25);
     padding: 20px;
