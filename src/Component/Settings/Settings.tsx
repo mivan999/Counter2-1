@@ -10,7 +10,7 @@ type propsType={
     maxDown:()=>void
     startDown:()=>void
     set:()=>void
-error:string
+    error:string
    // setValue:()=>void
    //  editVal:(s:boolean)=>void
    //  callBackError:(error:string)=>void
@@ -46,7 +46,7 @@ const Settings = (props:propsType) => {
             />
             <Button
                 name={"Set"}
-                disabled={false}
+                disabled={!!(props.error)}
                 callback={props.set}
             />
         </div>
