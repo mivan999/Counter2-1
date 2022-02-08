@@ -5,6 +5,7 @@ export type CountPropsType={
     status?:"default"|"maxLimit"
 }
 const Count = (props:CountPropsType) => {
+
     return (
         <div className={props.status=="maxLimit"?s.limit:s.def}>
             <h2>{props.value}</h2>
