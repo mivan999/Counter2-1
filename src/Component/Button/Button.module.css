@@ -1,5 +1,4 @@
 .button {
-    /*hight:140px;*/
     width: 202px;
     margin-bottom: 10px;
     display: inline-block;
@@ -15,10 +14,7 @@
     transition: 0.2s;
 }
 button:disabled{
-    /*background: linear-gradient(#51739b, #4071a9) #0b2d83;*/
     background: linear-gradient(#f59500, #f5ae00) #f59500;
     opacity: 0.3;
 }
-
-/*.button:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }*/
 .button:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }

@@ -11,9 +11,6 @@ type propsType={
     startDown:()=>void
     set:()=>void
     error:string
-   // setValue:()=>void
-   //  editVal:(s:boolean)=>void
-   //  callBackError:(error:string)=>void
 }
 const Settings = (props:propsType) => {
 

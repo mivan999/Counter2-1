@@ -4,50 +4,59 @@ import Button from '../Button/Button';
 import s from './Scoreboard.module.css'
 
 export type ScoreboardPropsType = {
-    count:number
-    inc:()=>void
-    reset:()=>void
-    statusCount:"default"|"maxLimit"
-    startCount:number
+    count: number
+    inc: () => void
+    reset: () => void
+    statusCount: 'default' | 'maxLimit'
+    startCount: number
     editStatus: boolean
     error: string
 }
 
-const Scoreboard = (props: ScoreboardPropsType) => {
+const Scoreboard = (
+    {
+        count,
+        inc,
+        reset,
+        statusCount,
+        startCount,
+        editStatus,
+        error
+    }: ScoreboardPropsType
+) => {
     const incrementCount = () => {
-        props.inc()
+        inc()
     }
     const resetCount = () => {
-       props.reset()
+        reset()
+    }
+    const countValue = () => {
+        return editStatus ?
+            error ?
+                <div className={s.message}>
+                    <h3>{error}</h3>
+                </div>
+                : <div className={s.message}>
+                    <h3>Enter value and press set</h3>
+                </div>
+            : <Count
+                value={count}
+                status={statusCount}
+            />
     }
     return (
-
-         <div className={props.statusCount === 'default' ? s.def : s.lim}>
-             {props.editStatus
-                ? props.error ?
-                     <div className={s.message}>
-                         <h3>{props.error}</h3>
-                     </div>
-                    : <div className={s.message}>
-                        <h3>Enter value and press set</h3>
-                     </div> :
-                <Count
-                    value={props.count}
-                    status={props.statusCount}
-                />
-             }
+        <div className={statusCount === 'default' ? s.def : s.lim}>
+            {countValue()}
             <div>
                 <Button
-                    name={"inc"}
+                    name={'inc'}
                     callback={incrementCount}
-                    disabled={props.editStatus || props.statusCount != 'default'}
-
+                    disabled={editStatus || statusCount !== 'default'}
                 />
                 <Button
-                    name={"reset"}
-                     callback={resetCount}
-                    disabled={props.editStatus || props.count === props.startCount}
-
+                    name={'reset'}
+                    callback={resetCount}
+                    disabled={editStatus || count === startCount}
                 />
             </div>
         </div>)
